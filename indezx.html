@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Our Story</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================= HERO VIDEO ================= -->
+    <section class="hero">
+      <div class="video-overlay"></div>
+      <iframe
+        src="https://www.youtube.com/embed/-pz8RfOWS18?rel=0&controls=1&modestbranding=1"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+
+      <div class="hero-text">
+        <h1>Our Story</h1>
+        <p>A collection of moments, memories, and love</p>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="gallery">
+      <h2>Captured Moments</h2>
+
+      <div class="card-grid">
+        <!-- CARD 1 -->
+        <div class="card fade-in">
+          <img src="images/photo1.jpg" alt="Memory 1" />
+          <div class="card-text">
+            <h3>First Smile</h3>
+            <p>The moment everything changed.</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card fade-in">
+          <img src="images/photo2.jpg" alt="Memory 2" />
+          <div class="card-text">
+            <h3>Quiet Nights</h3>
+            <p>Peace feels like this.</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card fade-in">
+          <img src="images/photo3.jpg" alt="Memory 3" />
+          <div class="card-text">
+            <h3>Forever Energy</h3>
+            <p>You are my favorite place.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= IMAGE MODAL ================= -->
+    <div class="modal" id="imageModal">
+      <span class="close" id="imgClose">&times;</span>
+      <img class="modal-content" id="modalImage" />
+    </div>
+
+    <!-- ================= VIDEO CARDS (ADMIN CONTROLLED) ================= -->
+    <section class="video-gallery">
+      <h2>More Moments</h2>
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div class="modal" id="videoModal">
+      <span class="close" id="videoClose">&times;</span>
+      <div class="video-wrapper">
+        <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Netlify Identity (for /admin login redirect convenience) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
